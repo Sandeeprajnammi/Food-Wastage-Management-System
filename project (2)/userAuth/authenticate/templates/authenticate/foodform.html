@@ -1,0 +1,27 @@
+
+{% extends 'authenticate/base.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+	body{
+		background-image: url('{% static "img/reg.jpg" %}');
+		background-size: 1600px 800px;
+		background-repeat: no-repeat; 
+	}
+</style>
+
+
+<h2 class="text-center">RAISE REQUEST</h2>
+
+<div class="col-md-6 offset-md-3">
+	<form method="POST">
+		{% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-secondary">SUBMIT</button>
+		
+	</form>
+
+</div>
+
+{% endblock %}
